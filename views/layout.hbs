@@ -1,10 +1,71 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruth's Art</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/artof.css">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+</head>
+
+<body>
+
+    <nav>
+        <ul class="holder">
+            <li><a href="/">Home</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/sobremi">Sobre Mi</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="logo">
+        <img src="images/logo.png" alt="">
+    </header>
+
+
+    <main>
     {{{body}}}
-  </body>
+  </main>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.carrusel').slick({
+                slidesToShow: 3, // Muestra 3 imágenes por página
+                slidesToScroll: 3, // Desplaza 3 imágenes por vez
+                dots: true, // Muestra indicadores de puntos
+                autoplay: true, // Activa la reproducción automática
+                autoplaySpeed: 3000, // Velocidad de cambio de imagen en milisegundos (ejemplo: 3000ms = 3 segundos)
+            });
+        });
+    </script>
+
+
+<footer>
+    <div class="subscription-container">
+        <h2>Suscríbete a las noticias</h2>
+        <p>Recibe las últimas actualizaciones sobre los cuadros realizados.</p>
+        <form action="procesar_suscripcion.php" method="post">
+            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+            <button type="submit">Suscribirse</button>
+        </form>
+    </div> 
+<p>Diseñado por Ruth Zabaleta -&copy;2023</p>
+</footer>
+
+</body>
+
 </html>
