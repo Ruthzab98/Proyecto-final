@@ -13,7 +13,15 @@ var shopRouter = require('./routes/shop');
 var sobremiRouter = require('./routes/sobremi');
 var contactoRouter = require('./routes/contacto');
 var carritoRouter= require('./routes/carrito');
-
+var carrito2Router= require('./routes/carrito2');
+var carrito3Router= require('./routes/carrito3');
+var carrito4Router= require('./routes/carrito4');
+var carrito5Router= require('./routes/carrito5');
+var carrito6Router= require('./routes/carrito6');
+var carrito7Router= require('./routes/carrito7');
+var carrito8Router= require('./routes/carrito8');
+var carrito9Router= require('./routes/carrito9');
+var carrito10Router= require('./routes/carrito10');
 
 var app = express();
 
@@ -34,7 +42,15 @@ app.use('/shop', shopRouter);
 app.use('/sobremi', sobremiRouter);
 app.use('/contacto', contactoRouter); 
 app.use('/carrito', carritoRouter);
-
+app.use('/carrito2', carrito2Router);
+app.use('/carrito3', carrito3Router);
+app.use('/carrito4', carrito4Router);
+app.use('/carrito5', carrito5Router);
+app.use('/carrito6', carrito6Router);
+app.use('/carrito7', carrito7Router);
+app.use('/carrito8', carrito8Router);
+app.use('/carrito9', carrito9Router);
+app.use('/carrito10', carrito10Router);
 
 
 // catch 404 and forward to error handler
