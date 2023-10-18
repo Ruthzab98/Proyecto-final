@@ -24,10 +24,10 @@
 
     <nav>
         <ul class="holder">
-            <li><a href="/">Home</a></li>
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/sobremi">Sobre Mi</a></li>
-            <li><a href="/contacto">Contacto</a></li>
+            <li><a class="{{#if isHome}}activo{{/if}}" href="/">Home</a></li>
+            <li><a class="{{#if isShop}}activo{{/if}}" href="/shop">Shop</a></li>
+            <li><a class="{{#if isSobreMi}}activo{{/if}}" href="/sobremi">Sobre Mi</a></li>
+            <li><a class="{{#if isContacto}}activo{{/if}}" href="/contacto">Contacto</a></li>
         </ul>
     </nav>
 
@@ -62,7 +62,13 @@
             <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
             <button type="submit">Suscribirse</button>
         </form>
+        <p>{{message}}</p>
+
+         <script src="suscripcion.js"></script>
+         
     </div> 
+
+
 <p>Diseñado por Ruth Zabaleta -&copy;2023</p>
 </footer>
 
