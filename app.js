@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 
 require('dotenv').config();
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -22,6 +23,9 @@ var carrito7Router= require('./routes/carrito7');
 var carrito8Router= require('./routes/carrito8');
 var carrito9Router= require('./routes/carrito9');
 var carrito10Router= require('./routes/carrito10');
+var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/shop');
+
 
 var app = express();
 
@@ -35,6 +39,24 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'PIS2023jndskj',
+  resave: false,
+  saveUninitialized: true
+}))
+
+secured = async (req, res, next) => {
+  try {
+    console.log(req.session.id_usuario);
+    if (req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect('/admin/login');
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -51,7 +73,8 @@ app.use('/carrito7', carrito7Router);
 app.use('/carrito8', carrito8Router);
 app.use('/carrito9', carrito9Router);
 app.use('/carrito10', carrito10Router);
-
+app.use('/admin/login', loginRouter);
+app.use('/admin/shop', secured, adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
