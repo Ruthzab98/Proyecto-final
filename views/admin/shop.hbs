@@ -5,4 +5,39 @@
             </a>
         </p>
     </div>
+
+    <div class="row">
+        <div class="col-7" style="margin-top: -9px;">
+            <h2>Listado de Stock</h2>
+        </div>
+        <div class="col-5 text-end">
+            <a href="/admin/shop/agregar" class="btn btn-success"><i class="fas fa-plus"></i>Nuevo</a>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Título</th>
+                <th>Precio</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each shop}}
+            <tr>
+                <th scope="row">{{id}} </th>
+                <td> {{titulo}} </td>
+                <td> {{precio}} </td>
+                <td> {{stock}} </td>
+                <td>
+                    <a href="/admin/shop/modificar/{{id}}" class="btn btn-secondary">Editar</a>
+                    <a href="/admin/shop/eliminar/{{id}} " class="btn btn-secondary">Borrar</a>
+                </td>
+            </tr>
+
+            {{/each}}
+        </tbody>
+    </table>
 </div>
